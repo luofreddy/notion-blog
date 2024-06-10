@@ -1,4 +1,5 @@
 const Vercel = () => {
+  return ''
   return (
     <a
       href="https://vercel.com?utm_source=Craigary&utm_campaign=oss"

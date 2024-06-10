@@ -10,8 +10,8 @@ const NavBar = () => {
   const locale = useLocale()
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
-    { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.RSS, to: '/feed', show: true, external: true },
+    // { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
+    // { id: 2, name: locale.NAV.RSS, to: '/feed', show: true, external: true },
     { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
   ]
   return (
@@ -39,15 +39,15 @@ export default function Header ({ navBarTitle, fullWidth }) {
 
   // Favicon
 
-  const resolveFavicon = fallback => !fallback && dark ? '/favicon.dark.png' : '/favicon.png'
-  const [favicon, _setFavicon] = useState(resolveFavicon())
-  const setFavicon = fallback => _setFavicon(resolveFavicon(fallback))
+  // const resolveFavicon = fallback => !fallback && dark ? '/favicon.dark.png' : '/favicon.png'
+  // const [favicon, _setFavicon] = useState(resolveFavicon())
+  // const setFavicon = fallback => _setFavicon(resolveFavicon(fallback))
 
-  useEffect(
-    () => setFavicon(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dark]
-  )
+  // useEffect(
+  //   () => setFavicon(),
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   [dark]
+  // )
 
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(/** @type {HTMLDivElement} */ undefined)
@@ -103,21 +103,21 @@ export default function Header ({ navBarTitle, fullWidth }) {
         </svg>
         <div className="flex items-center">
           <Link href="/" aria-label={BLOG.title}>
-            <Image
+            {/* <Image
               src={favicon}
               width={24}
               height={24}
               alt={BLOG.title}
               onError={() => setFavicon(true)}
-            />
-          </Link>
-          <HeaderName
+            /> */}
+             <HeaderName
             ref={titleRef}
             siteTitle={BLOG.title}
             siteDescription={BLOG.description}
             postTitle={navBarTitle}
             onClick={handleClickHeader}
           />
+          </Link>
         </div>
         <NavBar />
       </div>
@@ -135,7 +135,7 @@ const HeaderName = forwardRef(function HeaderName ({ siteTitle, siteDescription,
       {postTitle && <span className="post-title row-start-1 col-start-1">{postTitle}</span>}
       <span className="row-start-1 col-start-1">
         <span className="site-title">{siteTitle}</span>
-        <span className="site-description font-normal">, {siteDescription}</span>
+        {/* <span className="site-description font-normal">, {siteDescription}</span> */}
       </span>
     </p>
   )

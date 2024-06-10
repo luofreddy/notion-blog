@@ -39,14 +39,7 @@ export default function Post (props) {
         )}>
           <div className="flex mb-4">
             <a href={BLOG.socialLink || '#'} className="flex">
-              <Image
-                alt={BLOG.author}
-                width={24}
-                height={24}
-                src={`https://gravatar.com/avatar/${emailHash}`}
-                className="rounded-full"
-              />
-              <p className="ml-2 md:block">{BLOG.author}</p>
+              <p className="md:block">{BLOG.author}</p>
             </a>
             <span className="block">&nbsp;/&nbsp;</span>
           </div>
