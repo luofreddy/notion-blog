@@ -88,8 +88,10 @@ class MyDocument extends Document {
               </noscript>
             </>
           )}
+
           <link rel="icon" href="/favicon.webp" />
           <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"></link>
+          <meta name="google-site-verification" content="w9YeXyhsZRMGL7TDQ834VcA94iHzY7voXK-9KkVDo28" />
           {config.appearance === 'auto'
             ? (
             <>
